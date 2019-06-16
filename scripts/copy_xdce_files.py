@@ -17,6 +17,9 @@ parser.add_argument(
 parser.add_argument(
     '--overwrite', action='store_true',
     help='Whether to overwrite existing files')
+parser.add_argument(
+    '--dry-run', action='store_true',
+    help='Whether to run the script in dry-run mode')
 parser.add_argument('--verbose', '-v', action='count', default=0)
 args = parser.parse_args()
 
@@ -45,9 +48,11 @@ for infile in glob.glob("%s/20190529-ftp/*.xdce" % args.study_path):
 
     outfile = "%s/%s" % (xdce_map[xdce_filename], xdce_filename)
 
+    logging.info("Writing %s" % outfile)
+    if args.dry_run:
+        continue
     if os.path.exists(outfile) and not args.overwrite:
         raise Exception("Cannot overwrite %s" % outfile)
-    logging.info("Writing %s" % outfile)
     with open(infile, 'r') as fin:
         with open(outfile, 'w') as fout:
             for line in fin:
