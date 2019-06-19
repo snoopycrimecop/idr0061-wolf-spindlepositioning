@@ -1,0 +1,12 @@
+---
+channels:
+    1:
+        active: true
+        color: '808080'
+        end: 1000.0
+        label: TexasRed
+        start: 0.0
+greyscale: true
+t: 1
+version: 2
+z: 1
