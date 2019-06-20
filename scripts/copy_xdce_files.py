@@ -37,11 +37,22 @@ with open("%s/20190529-ftp/readme.txt" % args.study_path, 'r') as f:
         assert os.path.exists(xdce_path), 'Cannot find %s' % xdce_path
         xdce_map[xdce_filename] = xdce_path
 
-for infile in glob.glob("%s/20190529-ftp/*.xdce" % args.study_path):
+# Corrected metadata xdce files were resubmitted in two uploads
+# BSF013076.xdce was still invalid (1 field of view instead of 2) in the first
+# upload
+xdce_files_1 = glob.glob("%s/20190529-ftp/*.xdce" % args.study_path)
+xdce_files_1 = [x for x in xdce_files_1 if not x.endswith('BSF013076.xdce')]
+xdce_files_2 = glob.glob("%s/20190619-ftp/*.xdce" % args.study_path)
+xdce_files = xdce_files_1 + xdce_files_2
+
+for infile in xdce_files:
     xdce_filename = os.path.basename(infile)
     assert xdce_filename in xdce_map.keys()
+
     logging.info("Reading %s" % infile)
     with open(infile, 'r') as fin:
+        # Compute the number of images in the fileset using the Image element
+        # as the ground truth
         images_count = len(
             [l for l in fin.readlines() if l.lstrip().startswith('<Image ')])
         logging.debug("Found %g images" % images_count)
@@ -59,6 +70,7 @@ for infile in glob.glob("%s/20190529-ftp/*.xdce" % args.study_path):
                 if not line.lstrip().startswith('<Images '):
                     fout.write(line)
                     continue
+                # Update the Images number
                 new_line = re.sub(
                     r'number=\"\d+\"', 'number=\"%s\"' % images_count, line)
                 fout.write(new_line)
