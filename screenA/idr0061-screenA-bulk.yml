@@ -4,6 +4,7 @@ path: "idr0061-screenA-plates.tsv"
 continue: "true"
 transfer: "ln_s"
 skip: "all"
+exclude: "clientpath"
 parallel_upload: "10"
 columns:
     - name
