@@ -3,8 +3,8 @@ target: "Screen:name:idr0061-wolf-spindlepositioning/screenA"
 path: "idr0061-screenA-plates.tsv"
 continue: "true"
 transfer: "ln_s"
-skip: "checksum"
-parallel_upload: "50"
+skip: "all"
+parallel_upload: "10"
 columns:
     - name
     - path
