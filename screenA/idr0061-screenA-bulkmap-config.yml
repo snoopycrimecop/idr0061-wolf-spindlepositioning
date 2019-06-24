@@ -10,7 +10,7 @@ defaults:
 
   # If non-empty a string used to separate multiple fields in a column
   # White space will be stripped
-  split: ,
+  split: ","
   # Should this column be included in the clients (yes/no)
   includeclient: yes
   # Should this column be visible in the clients, if no the column should be
@@ -68,7 +68,8 @@ columns:
       namespace: openmicroscopy.org/mapr/gene
       columns:
         - name: Gene Symbol
-          clientname: Gene Identifier
+          include: yes
+        - name: Gene Identifier
           include: yes
         - name: Gene Identifier
           clientname: Gene Identifier URL
