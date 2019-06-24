@@ -21,10 +21,6 @@ defaults:
 
 columns:
 
-  - name: Gene Annotation Comments
-    clientname: Gene Annotation
-    include: yes
-
   - name: Sense Sequence
     clientname: Sense Sequence
     include: yes
@@ -35,6 +31,10 @@ columns:
 
   - name: Control Comments
     clientname: Control Comments
+    include: yes
+
+  - name: Reagent Identifier
+    clientname: Reagent Identifier
     include: yes
 
   - name: Quality Control
@@ -74,6 +74,13 @@ columns:
         - name: Gene Identifier
           clientname: Gene Identifier URL
           clientvalue: https://www.ncbi.nlm.nih.gov/gene/{{ value|urlencode }}
+          include: yes
+
+  - group:
+      namespace: openmicroscopy.org/mapr/gene/supplementary
+      columns:
+        - name: Gene Annotation Comments
+          clientname: Gene Annotation
           include: yes
 
 advanced:
