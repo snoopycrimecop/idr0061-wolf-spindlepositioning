@@ -17,7 +17,7 @@ Study Screens Number	1
 														
 Study External URL	
 															
-Study Public Release Date																
+Study Public Release Date	2019-07-03																
 																
 # Study Publication																
 Study PubMed ID	
