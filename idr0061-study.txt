@@ -20,13 +20,13 @@ Study External URL
 Study Public Release Date	2019-07-03																
 																
 # Study Publication																
-Study PubMed ID	
+Study PubMed ID	31253758
 															
 Study Publication Title	Live imaging screen reveals that TYRO3 and GAK ensure accurate spindle positioning in human cells 															
 Study Author List	Benita Wolf, Coralie Busso, Pierre Gönczy															
-Study PMC ID
+Study PMC ID	PMC6599018
 																
-Study DOI																
+Study DOI	https://doi.org/10.1038/s41467-019-10446-z																
 																
 # Study Contacts																
 Study Person Last Name	Wolf	
@@ -45,7 +45,7 @@ Study License URL	https://creativecommons.org/licenses/by/4.0/
 Study Copyright	Wolf et al.  
 															
 Study Data Publisher	University of Dundee															
-Study Data DOI																
+Study Data DOI	https://doi.org/10.17867/10000126															
 																
 Term Source Name	NCBITaxon	EFO	CMPO	Fbbi												
 Term Source File	http://purl.obolibrary.org/obo/	http://www.ebi.ac.uk/efo/	http://www.ebi.ac.uk/cmpo/	http://purl.obolibrary.org/obo/												
