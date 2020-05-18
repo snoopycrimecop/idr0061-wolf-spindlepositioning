@@ -54,7 +54,8 @@ for infile in xdce_files:
         # Compute the number of images in the fileset using the Image element
         # as the ground truth
         images_count = len(
-            [l for l in fin.readlines() if l.lstrip().startswith('<Image ')])
+            [line for line in fin.readlines()
+             if line.lstrip().startswith('<Image ')])
         logging.debug("Found %g images" % images_count)
 
     outfile = "%s/%s" % (xdce_map[xdce_filename], xdce_filename)
